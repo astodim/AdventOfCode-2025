@@ -1,0 +1,14 @@
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\bin\Debug\net10.0\Day2.exe
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\bin\Debug\net10.0\Day2.deps.json
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\bin\Debug\net10.0\Day2.runtimeconfig.json
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\bin\Debug\net10.0\Day2.dll
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\bin\Debug\net10.0\Day2.pdb
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\Day2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\Day2.AssemblyInfoInputs.cache
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\Day2.AssemblyInfo.cs
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\Day2.csproj.CoreCompileInputs.cache
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\Day2.dll
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\refint\Day2.dll
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\Day2.pdb
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\Day2.genruntimeconfig.cache
+C:\Users\Didem\Documents\AdventOfCode\Day2\Day2\obj\Debug\net10.0\ref\Day2.dll
