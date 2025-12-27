@@ -9,23 +9,64 @@ void GetNumbers(string input)
         long number1 = Convert.ToInt64(_numbers[0]);
         long number2 = Convert.ToInt64(_numbers[1]);
 
-        for (long i = number1; i < number2; i++)
+        for (long i = number1; i <= number2; i++)
         {
-            string iString = i.ToString();
-            string halfOfTheNumber = iString.Substring(0, iString.Length / 2);
-            if (i < 100 && i > 9 && iString[0] == iString[1])
+            bool isInvalid = false;
+            int length = i.ToString().Length;
+            for (int j = 1; j <= length; j++)
             {
-                //Invalid ID
-                password += i;
-            }
-            else if (i >= 1000)
-            {
-                string otherHalfOfTheNumber = iString.Substring(iString.Length / 2);
-                if (halfOfTheNumber == otherHalfOfTheNumber)
+                string _i = i.ToString();
+                if (j != 1 && length % j != 0) continue;
+
+                if (j + 1 > length) break;
+                if (j == 1 && length == 2)
                 {
-                    //Invalid ID
-                    password += i;
+                    if (_i[0] != _i[1])
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        password += i;
+                        isInvalid = true;
+                        Console.WriteLine("Num: " + i);
+                    }
                 }
+                else if (length > 2)
+                {
+                    bool broke = false;
+                    string firstSubStr = _i.Substring(0, j);
+                    if (j < 2)
+                    {
+                        for (int k = 1; k <= length-1; k++)
+                        {
+                            if (_i[0] != _i[k])
+                            {
+                                broke = true;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int k = j; k <= length-j; k += j)
+                        {
+                            string subStr = _i.Substring(k, j);
+                            if (firstSubStr != subStr)
+                            {
+                                broke = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (!broke)
+                    {
+                        password += i;
+                        isInvalid = true;
+                        Console.WriteLine("Num: " + i);
+                    }
+                }
+                if (isInvalid) break;
             }
         }
     }
