@@ -1,35 +1,46 @@
-﻿int password = 0;
+﻿//Solution of https://adventofcode.com/2025/day/3
+long password = 0;
 void FindTheJoltage(string input)
 {
     var lines = input.Split("\r\n");
     foreach (var line in lines)
     {
-        int[] biggestNumber = new int[2];
-        int secondBiggestNumber = 0;
-        for (int i = 0; i < line.Length; i++)
+        string final = "";
+        int[,] powerGrid = new int[12,2];
+
+        for (int i = 0; i < powerGrid.GetLength(0); i++)
         {
-            int number = int.Parse(line[i].ToString());
-            if (number > biggestNumber[1])
+            powerGrid[i, 0] = -1;
+            powerGrid[i, 1] = -1;
+        }
+
+        int biggestLength = -1;
+
+        for (int i = 0; i < powerGrid.GetLength(0); i++)
+        {
+            for (int j = 0; j < line.Length; j++)
             {
-                if (i == line.Length-1)
+                if (j <= biggestLength)
                 {
-                    secondBiggestNumber = number;
+                    continue;
                 }
-                else
+                char c = line[j];
+                int num = int.Parse(c.ToString());
+                if (num > powerGrid[i, 1])
                 {
-                    biggestNumber[0] = i;
-                    biggestNumber[1] = number;
+                    int index = j + 1;
+                    if (line.Substring(index).Length >= 11-i)
+                    {
+                        powerGrid[i, 0] = j;
+                        powerGrid[i, 1] = num;
+                    }
                 }
             }
+            biggestLength = powerGrid[i, 0];
+            final += powerGrid[i, 1].ToString();
         }
-        var _line = line.Substring(biggestNumber[0]+1);
-        foreach (var ch in _line)
-        {
-            int number = int.Parse(ch.ToString());
-            if (number > secondBiggestNumber) secondBiggestNumber = number;
-        }
-        string result = biggestNumber[1] + secondBiggestNumber.ToString();
-        password += int.Parse(result);
+        password += Convert.ToInt64(final);
+        Console.WriteLine($"Number: {line} - Opened: {final}");
     }
     Console.WriteLine(password);
 }
